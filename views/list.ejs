@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="list_style.css">
+
+</head>
+<body>
+    <h1>Pokedex</h1>
+    <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Type</th>
+            <th>Ability</th>
+          </tr>
+        </thead>
+        <tbody>
+          <% for (let i = 0; i < pokemons.length; i++) { %>
+            <tr>
+              <td><%= pokemons[i]._id %></td>
+              <td><%= pokemons[i]._name %></td>
+              <td><%= pokemons[i]._type %></td>
+              <td><%= pokemons[i]._ability %></td>
+            </tr>
+          <% } %>
+        </tbody>
+      </table>
+    <div><a href="javascript:history.back()">Go Back</a></div>
+</body>
+</html>

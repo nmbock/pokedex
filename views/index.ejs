@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Pokedex</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <h1>Pokedex</h1>
+    <div id="form-wrapper">
+        <div>
+            <!-- Add /Update Pokemon form -->
+            <form id="add-pokemon-form">
+                <label for="name1">Name:</label>
+                <input type="text" id="name1" name="name" required><br>
+
+                <label for="type">Type:</label> 
+                <select id="type" name="type" required>
+                    <% typeNames.forEach(function(typeName) { %>
+                        <option value="<%= typeName %>"><%= typeName %></option>
+                    <% }); %>
+                </select><br>
+
+                <label for="ability">Ability:</label>
+                <select id="ability" name="ability" required>
+                    <% abilitiesName.forEach(function(abilityName) { %>
+                        <option value="<%= abilityName %>"><%= abilityName %></option>
+                    <% }); %>
+                </select><br>
+
+                <button type="button"id="add-button">Add Pokemon</button>
+                <button id="update-button">Update Pokemon</button>
+            </form>
+        </div>
+
+        <div>
+            <!-- Read/Delete Pokemon form -->
+            <form id="read-button-form">
+                <label for="name2">Name:</label>
+                <input type="text" id="name2" name="name" required><br>
+                <button type="button" id="read-button">Search Pokemon</button>
+                <button type="button" id="delete-button">Delete Pokemon</button>
+            </form>
+        </div>
+    </div>
+    
+    <div id="pokemon-list" class="hidden"></div>
+    <div id="div4"><div id="list"><a href="list" style="color: white">view all</a></div></div>
+</body>
+</html>
